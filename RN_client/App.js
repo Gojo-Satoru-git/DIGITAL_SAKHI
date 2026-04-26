@@ -4,10 +4,9 @@
  *
  * @format
  */
-import { StatusBar , Text, StyleSheet, useColorScheme,  } from 'react-native';
-import {
-  SafeAreaProvider,
-} from 'react-native-safe-area-context';
+import MainNavigation from './src/navigation/MainNavigation';
+import { StatusBar, Text, StyleSheet, useColorScheme } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 function App() {
   const isDarkMode = useColorScheme() === 'dark';
@@ -15,13 +14,10 @@ function App() {
   return (
     <SafeAreaProvider>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <Text >Digital sakhi</Text>
+      <MainNavigation />
     </SafeAreaProvider>
   );
 }
-
-
-
 
 const styles = StyleSheet.create({
   container: {
