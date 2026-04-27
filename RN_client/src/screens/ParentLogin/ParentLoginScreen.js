@@ -10,12 +10,12 @@ import {
   Platform 
 } from 'react-native';
 import { colors } from '../../theme/colors';
+import { useNavigation } from '@react-navigation/native';
 
 const ParentLoginScreen = ({ navigation }) => {
   const [mobile, setMobile] = useState('');
   const [otpSent, setOtpSent] = useState(false);
   const [otp, setOtp] = useState('');
-
   const handleRequestOTP = () => {
     if (mobile.length === 10) {
       // In a real app, this triggers an API call to your Node backend
@@ -30,7 +30,8 @@ const ParentLoginScreen = ({ navigation }) => {
       // In a real app, this verifies the OTP with your backend
       // and navigates to the Family Hub upon success
       alert("OTP Verified! Proceeding to Dashboard...");
-      // navigation.navigate('FamilyHub'); // We will build this next!
+      navigation.navigate('FamilyHub');
+      // navigation.navigat e('FamilyHub'); // We will build this next!
     } else {
       alert("Please enter the OTP");
     }

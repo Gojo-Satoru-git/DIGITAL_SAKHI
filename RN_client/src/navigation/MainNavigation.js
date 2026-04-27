@@ -9,6 +9,8 @@ import WorkerDashboardScreen from '../screens/WorkerDashboard/WorkerDashboardScr
 import QRAttendanceScreen from '../screens/QRAttendance/QRAttendanceScreen';
 import GrowthDataEntryScreen from '../screens/GrowthDataEntry/GrowthDataEntryScreen';
 import HealthAlertsScreen from '../screens/HealthAlerts/HealthAlertsScreen';
+import FamilyHubScreen from '../screens/FamilyHub/FamilyHubScren';
+import ParentDashboardScreen from '../screens/ParentDashboard/ParentDashboard';
 
 const Stack = createNativeStackNavigator();
 
@@ -37,8 +39,10 @@ const MainNavigation = () => {
           component={GrowthDataEntryScreen}
         />
         <Stack.Screen name="HealthAlerts" component={HealthAlertsScreen} />
-
+        {/** parent branch */}
         <Stack.Screen name="ParentLogin" component={ParentLoginScreen} />
+        <Stack.Screen name="FamilyHub" component={FamilyHubScreen}/>
+        <Stack.Screen name="ParentDashboard" component={ParentDashboardScreen}/>
 
         {/* We will add ParentLogin here next! */}
       </Stack.Navigator>
